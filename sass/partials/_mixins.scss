@@ -16,3 +16,16 @@
   color: $lightTitle;
   border-color: $transparentBorder;
 }
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin transparentBorder {
+  border: {
+    width: 1px;
+    style:solid;
+    color:$transparentBorder;
+  }
+}

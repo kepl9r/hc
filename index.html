@@ -1,71 +1,95 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="javascripts/scripts.js"></script>
-</head>
-<body>
-  <header>
-      <a class="logo" href="">LOGO</a>
-      <input id="toggleMenu" class="menuIcon" type="checkbox" checked/>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="javascripts/scripts.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <section class="Wrap">
+      <a href=""><img src="images/icLogo.svg"></a>
+      <input id="toggle" class="menuIcon" type="checkbox" checked/>
       <nav>
-        <ul class="menu">
-          <li>L'Hôtel</li>
-          <li>Chambres</li>
-          <li>Destination</li>
-          <li>Contact</li>
-          <li>Infos</li>
-          <li><a class="button white">Réserver</a></li>
-          <li><div>Lang</div></li>
+        <ul>
+          <li><a href="index.html">L'Hôtel</a></li>
+          <li><a href="">Chambres</a></li>
+          <li><a href="">Destination</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">Infos</a></li>
+          <li><a href="" class="button white">Réserver</a></li>
+          <li>
+            <div><img src="images/us.svg"></div>
+          </li>
         </ul>
       </nav>
-  </header>
-  <section>
-    <div>
-      <h1>Bienvenue a l’Hôtel Colbert*** Juan-les-pins</h1>
-      <p>L'Hôtel Colbert, hôtel 3 étoiles est situé au centre de Juan-Les-Pins, idéalement<br>placé à 50 métres des plages, à 5 min du centre ville.</p>
+      <section>
+    </header>
+    <div class="slider">
+      <div>
+        <label for="slide-1-trigger"></label>
+        <label for="slide-2-trigger"></label>
+        <label for="slide-3-trigger"></label>
+        <label for="slide-4-trigger"></label>
+      </div>
+      <input id="slide-1-trigger" type="radio" name="slides" checked>
+      <section class="slide slideOne"></section>
+      <input id="slide-2-trigger" type="radio" name="slides">
+      <section class="slide slideTwo"></section>
+      <input id="slide-3-trigger" type="radio" name="slides">
+      <section class="slide slideThree"></section>
+      <input id="slide-4-trigger" type="radio" name="slides">
+      <section class="slide slideFour"></section>
     </div>
-    <div>Slider</div>
-  </section>
-  <section>
-    <input>Dates</input>
-    <input>Clients</input>
-    <a class="button orange">Réserver</a>
-  </section>
-  <section>
-    <ul>
-      <li>
-        <h2>Chambres</h2>
-        <p>Au bord des plus belles plages de la Côte d’AzurNous disposons de 4 types de chambres: chambre simple, double, triple ou quadruple.</p>
-        <a class="button white">Voir les Chambres</a>
-      </li>
-      <li>
-        <h2>Destination</h2>
-        <p>Station balnéaire où se mêlent traditions et plaisirs nautiques, histoire et patrimoine, festivals et vie nocturne.</p>
-        <a class="button white">Découvrir</a>
-      </li>
-      <li>
-        <h2>Offres</h2>
-        <p>Profitez de nos offre “Petit Dejeuner Offert!”  sure un sejour minimum 2 nuits. (offre non cumulable avec autre promo et vérifier la disponibilité)</p>
-        <a class="button white">J’en Profite</a>
-      </li>
-    </ul>
-  </section>
-  <footer>
     <section>
-      <p><small>Copyright © 2017 Hotel Colbert</small></p>
-      <img>Logo</img>
-      <p><small>Nous Contactez: + 33 4 93 61 20 08</small></p>
-      <div>Facebook</div>
+      <div>
+        <h1>Bienvenue a l’Hôtel Colbert*** Juan-les-pins</h1>
+        <p>L'Hôtel Colbert, hôtel 3 étoiles est situé au centre de Juan-Les-Pins, idéalement
+          <br>placé à 50 métres des plages, à 5 min du centre ville.</p>
+      </div>
+      <div>Slider</div>
     </section>
     <section>
-      <div>Tripadvisor</div>
-      <div>Tripadvisor</div>
+      <input>Dates</input>
+      <input>Clients</input>
+      <a href="" class="button orange">Réserver</a>
     </section>
-  </footer>
-</body>
+    <section>
+      <ul>
+        <li>
+          <h2>Chambres</h2>
+          <p>Au bord des plus belles plages de la Côte d’AzurNous disposons de 4 types de chambres: chambre simple, double, triple ou quadruple.</p>
+          <a href="" class="button white">Voir les Chambres</a>
+        </li>
+        <li>
+          <h2>Destination</h2>
+          <p>Station balnéaire où se mêlent traditions et plaisirs nautiques, histoire et patrimoine, festivals et vie nocturne.</p>
+          <a href="" class="button white">Découvrir</a>
+        </li>
+        <li>
+          <h2>Offres</h2>
+          <p>Profitez de nos offre “Petit Dejeuner Offert!” sure un sejour minimum 2 nuits. (offre non cumulable avec autre promo et vérifier la disponibilité)</p>
+          <a href="" class="button white">J’en Profite</a>
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <section>
+        <p><small>Copyright © 2017 Hotel Colbert</small></p>
+        <img>Logo</img>
+        <p><small>Nous Contactez: + 33 4 93 61 20 08</small></p>
+        <div>Facebook</div>
+      </section>
+      <section>
+        <div>Tripadvisor</div>
+        <div>Tripadvisor</div>
+      </section>
+    </footer>
+  </body>
+
 </html>

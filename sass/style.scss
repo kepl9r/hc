@@ -2,29 +2,30 @@
 @import "partials/mixins";
 @import "partials/variables";
 
-body{
-  background:{
+body {
+  background: {
     color: $lightTitle;
   }
-  font:{
+  font: {
     size: 14px;
     family: Arial, helvetica, sans-serif;
   }
+  @include zero;
 }
 
 header {
+  position: absolute;
+  z-index: 6000;
   width: 100%;
-  padding-top: .5em;
-  padding-bottom: .7em;
+  margin-top: 16px;
 }
 
-a.logo {
-  display: inline;
-  width: 80px;
-  height: auto;
+.Wrap{
+  margin: 0 auto;
+  width: 80%;
 }
 
-#toggleMenu {
+#toggle {
   display: none;
 }
 
@@ -32,20 +33,28 @@ nav {
   display: block;
   float: right;
   clear: both;
+  ul li {
+    display: block;
+    float: left;
+    margin-left: 32px;
+    a{
+      color: $lightParagraph;
+      &:hover{
+        color: $lightTitle;
+      }
+      &:active{
+        color:$lightParagraph;
+      }
+    }
+  }
 }
 
-nav ul li {
-  display: block;
-  float: left;
-  margin-left: 2em;
-  margin-top: -1em;
-}
 
 @media only screen and (max-width: 479px) {
   header {
     padding-bottom: 0;
   }
-  #toggleMenu {
+  #toggle {
     display: block;
     float: right;
     margin: 0 auto;
@@ -57,85 +66,149 @@ nav ul li {
     width: 16px;
     -webkit-appearance: initial;
     outline: none;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 0.15em;
+      margin-left: -7px;
+      background: $darkParagraph;
+      box-shadow: 0 0.5em 0 0 $darkParagraph, 0 1em 0 0 $darkParagraph;
+    }
   }
-  .menuIcon:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 24px;
-    height: 0.15em;
-    margin-left: -7px;
-    background: black;
-    box-shadow: 0 0.5em 0 0 black, 0 1em 0 0 black;
-  }
-  #toggleMenu:checked ~ nav .menu {
+  #toggle:checked ~ nav ul {
     display: none;
   }
-
   nav {
     float: none;
     padding-top: 1rem;
-  }
-  nav ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    text-align: center;
-    float: none;
-    display: block;
-    border-bottom: 1px solid black;
-  }
-  nav ul li {
-    display: block;
-    text-align: center;
-    float: none;
-    margin: 0;
-    padding: 1em 0;
-    border-top: 1px solid black;
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      text-align: center;
+      float: none;
+      display: block;
+      border-bottom: 1px solid $lightBorder;
+      li {
+        display: block;
+        text-align: center;
+        float: none;
+        margin: 0;
+        padding: 1em 0;
+      }
+      &:nth-child(1) {
+        border-top: 1px solid $lightBorder;
+      }
+    }
   }
 }
 
+.slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #120103;
+  color: $lightTitle;
+  text-align: center;
+  div {
+    background: $overlay;
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    height: 482px;
+    label {
+      position: relative;
+      z-index: 2000;
+      display: inline-block;
+      background: none;
+      @include transparentBorder;
+      height: 6px;
+      width: 6px;
+      border-radius: 100%;
+      cursor: pointer;
+      margin-top: 460px;
+      &:hover {
+        background: $lightTitle;
+      }
+    }
+  }
+  input {
+    display: none;
+  }
+}
 
-a{
+.slide {
+  height: 482px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 10;
+  background-color: #120103;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: left 0s 0.75s;
+}
+
+.slideOne {
+  background-image: url("../images/slideOne.png");
+}
+
+.slideTwo {
+  background-image: url(https://placeimg.com/1000/600/any);
+}
+
+.slideThree {
+  background-image: url(https://placeimg.com/1200/480/any);
+}
+
+.slideFour {
+  background-image: url(https://placeimg.com/800/600/any);
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left 0.65s ease-out;
+}
+
+a {
   text-decoration: none;
 }
 
-a.button{
-  padding:8px;
+a.button {
+  padding: 8px;
   font: {
-    size:14px;
+    size: 14px;
   }
-  border:{
-    width: 1px;
-    style: solid;
-  }
+  @include transparentBorder;
   background: none;
-    @include border-radius(4px);
-    &:hover{
-      opacity:.7;
-      cursor: pointer;
-    }
+  @include border-radius(4px);
+  &:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
 }
 
-a.button.orange{
+a.button.orange {
   @include buttonOrange;
 }
 
 a.button.white {
-  @include buttonWhite ;
+  @include buttonWhite;
 }
 
-
-input{
-  padding:8px;
+input {
+  padding: 8px;
   font: {
-    size:14px;
+    size: 14px;
   }
-  border:{
+  border: {
     width: 1px;
     style: solid;
   }
   background: none;
   @include border-radius(4px);
-
 }
