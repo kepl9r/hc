@@ -1,6 +1,30 @@
 @import "compass";
-@import "partials/base";
-@import "partials/layout";
 @import "partials/mixins";
-@import "partials/normalize";
 @import "partials/variables";
+
+body{
+  background:{
+    color: white;
+  }
+  font:{
+    size: 14px;
+    family: Arial, helvetica, sans-serif;
+  }
+}
+
+button{
+  padding:8px;
+  font: {
+    size:14px;
+  }
+  @include border-radius(4px);
+  border:{
+    width: 1px;
+    style: solid;
+  }
+  background: none;
+}
+
+input{
+  @include border-radius(4px);
+}
