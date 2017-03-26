@@ -1,5 +1,18 @@
+@import "partials/variables";
+
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin buttonOrange {
+  color: $orange;
+  border-color: $lightOrange;
+}
+
+@mixin buttonWhite {
+  color: $lightTitle;
+  border-color: $transparentBorder;
 }

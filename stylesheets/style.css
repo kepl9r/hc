@@ -6,19 +6,147 @@ body {
 }
 
 /* line 15, ../sass/style.scss */
-button {
+header {
+  width: 100%;
+  padding-top: .5em;
+  padding-bottom: .7em;
+}
+
+/* line 21, ../sass/style.scss */
+a.logo {
+  display: inline;
+  width: 80px;
+  height: auto;
+}
+
+/* line 27, ../sass/style.scss */
+#toggleMenu {
+  display: none;
+}
+
+/* line 31, ../sass/style.scss */
+nav {
+  display: block;
+  float: right;
+  clear: both;
+}
+
+/* line 37, ../sass/style.scss */
+nav ul li {
+  display: block;
+  float: left;
+  margin-left: 2em;
+  margin-top: -1em;
+}
+
+@media only screen and (max-width: 479px) {
+  /* line 45, ../sass/style.scss */
+  header {
+    padding-bottom: 0;
+  }
+
+  /* line 48, ../sass/style.scss */
+  #toggleMenu {
+    display: block;
+    float: right;
+    margin: 0 auto;
+  }
+
+  /* line 53, ../sass/style.scss */
+  .menuIcon {
+    position: relative;
+    background: transparent;
+    height: 16px;
+    width: 16px;
+    -webkit-appearance: initial;
+    outline: none;
+  }
+
+  /* line 61, ../sass/style.scss */
+  .menuIcon:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 0.15em;
+    margin-left: -7px;
+    background: black;
+    box-shadow: 0 0.5em 0 0 black, 0 1em 0 0 black;
+  }
+
+  /* line 71, ../sass/style.scss */
+  #toggleMenu:checked ~ nav .menu {
+    display: none;
+  }
+
+  /* line 75, ../sass/style.scss */
+  nav {
+    float: none;
+    padding-top: 1rem;
+  }
+
+  /* line 79, ../sass/style.scss */
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+    float: none;
+    display: block;
+    border-bottom: 1px solid black;
+  }
+
+  /* line 88, ../sass/style.scss */
+  nav ul li {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: 0;
+    padding: 1em 0;
+    border-top: 1px solid black;
+  }
+}
+/* line 99, ../sass/style.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 103, ../sass/style.scss */
+a.button {
   padding: 8px;
   font-size: 14px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
   border-width: 1px;
   border-style: solid;
   background: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 114, ../sass/style.scss */
+a.button:hover {
+  opacity: .7;
+  cursor: pointer;
 }
 
-/* line 28, ../sass/style.scss */
+/* line 120, ../sass/style.scss */
+a.button.orange {
+  color: #EF4723;
+  border-color: rgba(238, 71, 35, 0.25);
+}
+
+/* line 124, ../sass/style.scss */
+a.button.white {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* line 129, ../sass/style.scss */
 input {
+  padding: 8px;
+  font-size: 14px;
+  border-width: 1px;
+  border-style: solid;
+  background: none;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;

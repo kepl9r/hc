@@ -4,7 +4,7 @@
 
 body{
   background:{
-    color: white;
+    color: $lightTitle;
   }
   font:{
     size: 14px;
@@ -12,19 +12,130 @@ body{
   }
 }
 
-button{
+header {
+  width: 100%;
+  padding-top: .5em;
+  padding-bottom: .7em;
+}
+
+a.logo {
+  display: inline;
+  width: 80px;
+  height: auto;
+}
+
+#toggleMenu {
+  display: none;
+}
+
+nav {
+  display: block;
+  float: right;
+  clear: both;
+}
+
+nav ul li {
+  display: block;
+  float: left;
+  margin-left: 2em;
+  margin-top: -1em;
+}
+
+@media only screen and (max-width: 479px) {
+  header {
+    padding-bottom: 0;
+  }
+  #toggleMenu {
+    display: block;
+    float: right;
+    margin: 0 auto;
+  }
+  .menuIcon {
+    position: relative;
+    background: transparent;
+    height: 16px;
+    width: 16px;
+    -webkit-appearance: initial;
+    outline: none;
+  }
+  .menuIcon:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 0.15em;
+    margin-left: -7px;
+    background: black;
+    box-shadow: 0 0.5em 0 0 black, 0 1em 0 0 black;
+  }
+  #toggleMenu:checked ~ nav .menu {
+    display: none;
+  }
+
+  nav {
+    float: none;
+    padding-top: 1rem;
+  }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+    float: none;
+    display: block;
+    border-bottom: 1px solid black;
+  }
+  nav ul li {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: 0;
+    padding: 1em 0;
+    border-top: 1px solid black;
+  }
+}
+
+
+a{
+  text-decoration: none;
+}
+
+a.button{
   padding:8px;
   font: {
     size:14px;
   }
-  @include border-radius(4px);
   border:{
     width: 1px;
     style: solid;
   }
   background: none;
+    @include border-radius(4px);
+    &:hover{
+      opacity:.7;
+      cursor: pointer;
+    }
 }
 
+a.button.orange{
+  @include buttonOrange;
+}
+
+a.button.white {
+  @include buttonWhite ;
+}
+
+
 input{
+  padding:8px;
+  font: {
+    size:14px;
+  }
+  border:{
+    width: 1px;
+    style: solid;
+  }
+  background: none;
   @include border-radius(4px);
+
 }
