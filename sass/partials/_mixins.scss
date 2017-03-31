@@ -7,6 +7,14 @@
   border-radius: $radius;
 }
 
+@mixin transparentBorder {
+  border: {
+    width: 1px;
+    style:solid;
+    color:$transparentBorder;
+  }
+}
+
 @mixin buttonOrange {
   color: $orange;
   border-color: $lightOrange;
@@ -26,14 +34,6 @@
     margin: 0 auto
 }
 
-@mixin transparentBorder {
-  border: {
-    width: 1px;
-    style:solid;
-    color:$transparentBorder;
-  }
-}
-
 @mixin all  {
   transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -42,14 +42,6 @@
   -o-transition: all 0.2s ease;
 }
 
-
-@mixin opacity  {
-  transition: opacity 0.2s ease;
-  -moz-transition: opacity 0.2s ease;
-  -ms-transition: opacity 0.2s ease;
-  -webkit-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
-}
 
 @mixin bgFull {
   background-size: cover;
