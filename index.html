@@ -13,22 +13,22 @@
   <body>
     <header>
       <section class="wrap">
-      <a href=""><img src="images/icLogo.svg"></a>
-      <input id="toggle" class="menuIcon" type="checkbox" checked/>
-      <nav>
-        <ul>
-          <li><a href="index.html">L'Hôtel</a></li>
-          <li><a href="">Chambres</a></li>
-          <li><a href="">Destination</a></li>
-          <li><a href="">Contact</a></li>
-          <li><a href="">Infos</a></li>
-          <li><a href="" class="button white">Réserver</a></li>
-          <li>
-            <div><img src="images/us.svg"></div>
-          </li>
-        </ul>
-      </nav>
-      <section>
+        <a href=""><img src="images/icLogo.svg"></a>
+        <input id="toggle" class="menuIcon" type="checkbox" checked/>
+        <nav>
+          <ul>
+            <li><a href="index.html">L'Hôtel</a></li>
+            <li><a href="">Chambres</a></li>
+            <li><a href="">Destination</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Infos</a></li>
+            <li><a href="" class="button white">Réserver</a></li>
+            <li>
+              <div><img src="images/us.svg"></div>
+            </li>
+          </ul>
+        </nav>
+        <section>
     </header>
 
     <section class="hero">
@@ -66,9 +66,14 @@
     </section>
     <footer class="wrap">
       <ul>
-        <li><p>Copyright © 2017 Hotel Colbert</p></li>
+        <li>
+          <p>Copyright © 2017 Hotel Colbert</p>
+        </li>
         <li><img src="images/icLogoBlue.svg"></li>
-        <li><p>Nous Contactez: <a href="tel:+33493612008">+ 33 4 93 61 20 08 </a></p> <div class="fb-like" data-href="http://www.hotelcolbertajuan.fr" data-send="false" data-layout="button_count" data-width="150" data-show-faces="true"></div></li>
+        <li>
+          <p>Nous Contactez: <a href="tel:+33493612008">+ 33 4 93 61 20 08 </a></p>
+          <div class="fb-like" data-href="http://www.hotelcolbertajuan.fr" data-send="false" data-layout="button_count" data-width="150" data-show-faces="true"></div>
+        </li>
       </ul>
       <section>
         <div>Tripadvisor</div>
@@ -77,13 +82,17 @@
     </footer>
 
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    </script>
   </body>
 
 </html>

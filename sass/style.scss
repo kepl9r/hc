@@ -1,8 +1,7 @@
 @import "compass";
 @import "partials/mixins";
 @import "partials/variables";
-
-*{
+* {
   outline: none;
   box-sizing: border-box;
 }
@@ -22,8 +21,8 @@ a {
   text-decoration: none;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 
 a.button {
@@ -65,7 +64,7 @@ header {
   margin-top: 16px;
 }
 
-.wrap{
+.wrap {
   @include auto;
   width: 80%;
 }
@@ -74,45 +73,46 @@ header {
   display: none;
 }
 
+
 /* ----------- Navbar Specific ----------- */
 
-@media only screen and (min-width: 960px) {
-    nav {
+@media #{$desktop} {
+  nav {
+    display: block;
+    float: right;
+    clear: both;
+    ul li {
       display: block;
-      float: right;
-      clear: both;
-      ul li {
-        display: block;
-        float: left;
-        padding:0 0 16px 32px;
-        border-bottom: 1px solid $transparentBorder;
-        &:nth-child(1){
-          padding-left:0px;
-        }
-        &:nth-child(6), &:nth-child(7){
-          border-bottom: none;
-        }
-        a{
-          color: $lightParagraph;
-          &:hover:not(.button){
-            color: $lightTitle;
-            padding-bottom: 16px;
-            border-bottom: 1px solid $lightTitle;
-          }
+      float: left;
+      padding: 0 0 8px 32px;
+      border-bottom: 1px solid $transparentBorder;
+      &:nth-child(1) {
+        padding-left: 0px;
+      }
+      &:nth-child(6),
+      &:nth-child(7) {
+        border-bottom: none;
+      }
+      a {
+        color: $lightParagraph;
+        &:hover:not(.button) {
+          color: $lightTitle;
+          padding-bottom: 8px;
+          border-bottom: 1px solid $lightTitle;
         }
       }
     }
+  }
 }
 
-
-@media only screen and (max-width: 960px) {
+@media #{$mobile} {
   header {
     position: relative;
     background: $darkTitle;
     width: 100%;
-    padding-top:16px;
+    padding-top: 16px;
     margin: 0;
-    a > img{
+    a > img {
       width: 64px;
     }
   }
@@ -130,7 +130,7 @@ header {
     width: 16px;
     -webkit-appearance: initial;
     outline: none;
-    top:.7rem;
+    top: .7rem;
     &:after {
       content: "";
       position: absolute;
@@ -166,7 +166,7 @@ header {
         &:last-child {
           border-bottom: none;
         }
-        a{
+        a {
           color: $lightTitle;
         }
       }
@@ -174,41 +174,42 @@ header {
   }
 }
 
+
 /* ----------- Navbar Specific End ----------- */
 
-.hero{
+.hero {
   background-image: url("../images/hero.png");
   @include bgFull;
-  div{
+  div {
     position: relative;
     padding: 185px 0;
     text-align: center;
     width: 80%;
     @include auto;
-    &:before{
+    &:before {
       content: "";
       position: absolute;
       @include transparentBorder;
-      top:30%;
+      top: 30%;
       bottom: 32%;
       left: 18%;
       right: 18%;
     }
-    &:after{
+    &:after {
       content: "";
       position: absolute;
       @include transparentBorder;
-      top:26%;
+      top: 26%;
       bottom: 28%;
       left: 20%;
       right: 20%;
     }
-    h1{
+    h1 {
       color: $lightTitle;
       font-size: $title;
       font-weight: normal;
     }
-    p{
+    p {
       color: $lightParagraph;
       font-size: $bigText;
       line-height: 26px;
@@ -216,11 +217,11 @@ header {
   }
 }
 
-.dates{
+.dates {
   position: relative;
   text-align: center;
   @include auto;
-  input{
+  input {
     border: 1px solid $darkBorder;
     margin: 16px 12px 16px 0;
     width: 20%;
@@ -228,34 +229,34 @@ header {
 }
 
 .box {
-  ul{
+  ul {
     display: flex;
     @include zero;
-    li{
+    li {
       text-align: center;
       padding: 78px 0;
       width: 33.3333333333%;
       @include all;
       @include bgFull;
-      &:nth-child(1){
+      &:nth-child(1) {
         background-image: url("../images/boxOne.png");
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         background-image: url("../images/boxTwo.png");
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         background-image: url("../images/boxThree.png");
       }
-      &:hover{
+      &:hover {
         transform: scale(1.02);
         @include all;
       }
-      h2{
+      h2 {
         color: $lightTitle;
         font-size: $subTitle;
         font-weight: normal;
       }
-      p{
+      p {
         color: $lightParagraph;
         font-size: $bigText;
         padding-bottom: 16px;
@@ -267,33 +268,33 @@ header {
   }
 }
 
-footer{
+footer {
   padding-top: 16px;
-  ul{
+  ul {
     display: flex;
     @include zero;
-    li{
+    li {
       width: 33.33333333%;
-      p{
+      p {
         font-size: $text;
         color: $darkParagraph;
       }
-      &:nth-child(1){
+      &:nth-child(1) {
         text-align: left;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         text-align: center;
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         text-align: right;
-        p{
+        p {
           display: inline-block;
-          a{
+          a {
             text-decoration: underline;
             color: $darkParagraph;
           }
         }
-        div{
+        div {
           display: inline-block;
         }
       }
