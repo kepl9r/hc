@@ -2,15 +2,60 @@
 @import "partials/mixins";
 @import "partials/variables";
 
+*{
+  outline: none;
+  box-sizing: border-box;
+}
+
 body {
   background: {
     color: $lightTitle;
   }
   font: {
-    size: 14px;
+    size: $text;
     family: Arial, helvetica, sans-serif;
   }
   @include zero;
+}
+
+a {
+  text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+a.button {
+  padding: 8px;
+  font: {
+    size: $text;
+  }
+  @include transparentBorder;
+  background: none;
+  @include border-radius(4px);
+  @include all;
+  &:hover {
+    opacity: .7;
+    cursor: pointer;
+    @include all;
+  }
+}
+
+a.button.orange {
+  @include buttonOrange;
+}
+
+a.button.white {
+  @include buttonWhite;
+}
+
+input {
+  padding: 8px;
+  font-size: $text;
+  background: none;
+  @include border-radius(4px);
+  max-height: 34px;
 }
 
 header {
@@ -20,8 +65,8 @@ header {
   margin-top: 16px;
 }
 
-.Wrap{
-  margin: 0 auto;
+.wrap{
+  @include auto;
   width: 80%;
 }
 
@@ -29,35 +74,54 @@ header {
   display: none;
 }
 
-nav {
-  display: block;
-  float: right;
-  clear: both;
-  ul li {
-    display: block;
-    float: left;
-    margin-left: 32px;
-    a{
-      color: $lightParagraph;
-      &:hover{
-        color: $lightTitle;
-      }
-      &:active{
-        color:$lightParagraph;
+/* ----------- Navbar Specific ----------- */
+
+@media only screen and (min-width: 960px) {
+    nav {
+      display: block;
+      float: right;
+      clear: both;
+      ul li {
+        display: block;
+        float: left;
+        padding:0 0 16px 32px;
+        border-bottom: 1px solid $transparentBorder;
+        &:nth-child(1){
+          padding-left:0px;
+        }
+        &:nth-child(6), &:nth-child(7){
+          border-bottom: none;
+        }
+        a{
+          color: $lightParagraph;
+          &:hover:not(.button){
+            color: $lightTitle;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $lightTitle;
+          }
+        }
       }
     }
-  }
 }
 
 
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 960px) {
   header {
-    padding-bottom: 0;
+    position: relative;
+    background: $darkTitle;
+    width: 100%;
+    padding-top:16px;
+    margin: 0;
+    a > img{
+      width: 64px;
+    }
   }
   #toggle {
     display: block;
     float: right;
-    margin: 0 auto;
+    @include auto;
+    border: 1px solid transparent;
+    cursor: pointer;
   }
   .menuIcon {
     position: relative;
@@ -66,15 +130,16 @@ nav {
     width: 16px;
     -webkit-appearance: initial;
     outline: none;
+    top:.7rem;
     &:after {
       content: "";
       position: absolute;
       left: 0;
       width: 24px;
       height: 0.15em;
-      margin-left: -7px;
-      background: $darkParagraph;
-      box-shadow: 0 0.5em 0 0 $darkParagraph, 0 1em 0 0 $darkParagraph;
+      margin: -8px 0 0 -5px;
+      background: $lightTitle;
+      box-shadow: 0 0.5em 0 0 $lightTitle, 0 1em 0 0 $lightTitle;
     }
   }
   #toggle:checked ~ nav ul {
@@ -93,122 +158,145 @@ nav {
       border-bottom: 1px solid $lightBorder;
       li {
         display: block;
-        text-align: center;
+        text-align: left;
         float: none;
         margin: 0;
-        padding: 1em 0;
-      }
-      &:nth-child(1) {
-        border-top: 1px solid $lightBorder;
+        padding: 1.2em 0;
+        border-top: 1px solid $transparentBorder;
+        &:last-child {
+          border-bottom: none;
+        }
+        a{
+          color: $lightTitle;
+        }
       }
     }
   }
 }
 
-.slider {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  background: #120103;
-  color: $lightTitle;
-  text-align: center;
-  div {
-    background: $overlay;
+/* ----------- Navbar Specific End ----------- */
+
+.hero{
+  background-image: url("../images/hero.png");
+  @include bgFull;
+  div{
     position: relative;
-    z-index: 1000;
-    width: 100%;
-    height: 482px;
-    label {
-      position: relative;
-      z-index: 2000;
-      display: inline-block;
-      background: none;
+    padding: 185px 0;
+    text-align: center;
+    width: 80%;
+    @include auto;
+    &:before{
+      content: "";
+      position: absolute;
       @include transparentBorder;
-      height: 6px;
-      width: 6px;
-      border-radius: 100%;
-      cursor: pointer;
-      margin-top: 460px;
-      &:hover {
-        background: $lightTitle;
+      top:30%;
+      bottom: 32%;
+      left: 18%;
+      right: 18%;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      @include transparentBorder;
+      top:26%;
+      bottom: 28%;
+      left: 20%;
+      right: 20%;
+    }
+    h1{
+      color: $lightTitle;
+      font-size: $title;
+      font-weight: normal;
+    }
+    p{
+      color: $lightParagraph;
+      font-size: $bigText;
+      line-height: 26px;
+    }
+  }
+}
+
+.dates{
+  position: relative;
+  text-align: center;
+  @include auto;
+  input{
+    border: 1px solid $darkBorder;
+    margin: 16px 12px 16px 0;
+    width: 20%;
+  }
+}
+
+.box {
+  ul{
+    display: flex;
+    @include zero;
+    li{
+      text-align: center;
+      padding: 78px 0;
+      width: 33.3333333333%;
+      @include all;
+      @include bgFull;
+      &:nth-child(1){
+        background-image: url("../images/boxOne.png");
+      }
+      &:nth-child(2){
+        background-image: url("../images/boxTwo.png");
+      }
+      &:nth-child(3){
+        background-image: url("../images/boxThree.png");
+      }
+      &:hover{
+        transform: scale(1.02);
+        @include all;
+      }
+      h2{
+        color: $lightTitle;
+        font-size: $subTitle;
+        font-weight: normal;
+      }
+      p{
+        color: $lightParagraph;
+        font-size: $bigText;
+        padding-bottom: 16px;
+        line-height: 26px;
+        width: 80%;
+        @include auto;
       }
     }
   }
-  input {
-    display: none;
+}
+
+footer{
+  padding-top: 16px;
+  ul{
+    display: flex;
+    @include zero;
+    li{
+      width: 33.33333333%;
+      p{
+        font-size: $text;
+        color: $darkParagraph;
+      }
+      &:nth-child(1){
+        text-align: left;
+      }
+      &:nth-child(2){
+        text-align: center;
+      }
+      &:nth-child(3){
+        text-align: right;
+        p{
+          display: inline-block;
+          a{
+            text-decoration: underline;
+            color: $darkParagraph;
+          }
+        }
+        div{
+          display: inline-block;
+        }
+      }
+    }
   }
-}
-
-.slide {
-  height: 482px;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 10;
-  background-color: #120103;
-  background-position: 50% 50%;
-  background-size: cover;
-  transition: left 0s 0.75s;
-}
-
-.slideOne {
-  background-image: url("../images/slideOne.png");
-}
-
-.slideTwo {
-  background-image: url(https://placeimg.com/1000/600/any);
-}
-
-.slideThree {
-  background-image: url(https://placeimg.com/1200/480/any);
-}
-
-.slideFour {
-  background-image: url(https://placeimg.com/800/600/any);
-}
-
-[id^="slide"]:checked + .slide {
-  left: 0;
-  z-index: 100;
-  transition: left 0.65s ease-out;
-}
-
-a {
-  text-decoration: none;
-}
-
-a.button {
-  padding: 8px;
-  font: {
-    size: 14px;
-  }
-  @include transparentBorder;
-  background: none;
-  @include border-radius(4px);
-  &:hover {
-    opacity: .7;
-    cursor: pointer;
-  }
-}
-
-a.button.orange {
-  @include buttonOrange;
-}
-
-a.button.white {
-  @include buttonWhite;
-}
-
-input {
-  padding: 8px;
-  font: {
-    size: 14px;
-  }
-  border: {
-    width: 1px;
-    style: solid;
-  }
-  background: none;
-  @include border-radius(4px);
 }
