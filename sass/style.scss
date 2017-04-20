@@ -14,7 +14,7 @@ html {
 
 body {
   background: {
-    color: $lightTitle;
+    color: $darkBorder;
   }
   font: {
     size: $text;
@@ -51,10 +51,20 @@ input {
 }
 
 header {
-  position: absolute;
+  position: relative;
   z-index: 6000;
   width: 100%;
+  margin-bottom: -70px;
   margin-top: 16px;
+}
+
+
+.subWrap{
+  position: relative;
+  max-width: 1440px;
+  min-height: calc(100vh);
+  background-color: white;
+  @include auto;
 }
 
 .wrap {
@@ -93,8 +103,12 @@ header {
           &:hover:not(.button) {
             color: $lightTitle;
             padding-bottom: 8px;
-            border-bottom: 1px solid $lightTitle;
           }
+        }
+        a.active {
+          color: $lightTitle;
+          padding-bottom: 8px;
+          border-bottom: 1px solid $lightTitle;
         }
       }
     }
@@ -164,6 +178,9 @@ header {
         }
         a {
           color: $lightTitle;
+        }
+        a.active {
+          color: $lightParagraph;
         }
       }
     }
@@ -251,7 +268,7 @@ header {
     @include zero;
     li {
       text-align: center;
-      padding: 8rem 0 10rem 0;
+      padding: 7rem 0 8.5rem 0;
       width: 33.3333333333%;
       @include all;
       @include bgFull;
@@ -299,7 +316,8 @@ header {
 footer {
   ul {
     display: flex;
-    margin: 16px 0;
+    padding:16px 0;
+    border-bottom: 1px solid $darkBorder;
     li {
       width: 33.33333333%;
       p {
@@ -331,17 +349,49 @@ footer {
     }
   }
   section {
-    border-top: 1px solid $darkBorder;
     display: flex;
     justify-content: space-between;
-    margin: 16px 0;
-    div {
+    padding: 8px 0 0 0;
+    section {
       &:first-child {
-
+        zoom:.9;
       }
       &:last-child {
-
+        zoom:.9;
       }
     }
   }
 }
+
+/* ----------- footer specific media  ----------- */
+
+@media #{$mobile} {
+  footer {
+    ul {
+      flex-direction: column;
+      li {
+        width: 100%;
+        p {
+          text-align: center;
+        }
+        &:nth-child(1) {
+          text-align: center;
+        }
+        &:nth-child(2) {
+          margin: 16px 0;
+        }
+        &:nth-child(3) {
+          text-align: center;
+          @include zero;
+        }
+      }
+    }
+    section {
+      flex-direction: column;
+      padding: 8px 0 0 0;
+      @include auto;
+    }
+  }
+}
+
+/* ----------- footer specific media end  ----------- */
