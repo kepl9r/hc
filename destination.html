@@ -4,8 +4,8 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Hôtel Colbert Juan Les Pins - Les Chambres</title>
-    <meta name="description" content="L'Hôtel Colbert disposent de 32 Chambres rénovées récemment.">
+    <title>Hôtel Colbert Juan Les Pins - JUAN LES PINS</title>
+    <meta name="description" content="Hôtel 3 étoiles à Juan idéalement placé proche du bord de mer.">
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="javascripts/scripts.js"></script>
   </head>
@@ -19,8 +19,8 @@
           <nav>
             <ul>
               <li><a href="index.html">L'Hôtel</a></li>
-              <li><a class="active"href="">Chambres</a></li>
-              <li><a href="destination.html">Destination</a></li>
+              <li><a href="rooms.html">Chambres</a></li>
+              <li><a class="active" href="">Destination</a></li>
               <li><a href="">Contact</a></li>
               <li><a href="">Infos</a></li>
               <li><a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button white">Réserver</a></li>
@@ -32,40 +32,56 @@
           <section>
       </header>
 
-      <section class="roomsHero">
+      <section class="destinationHero">
         <div>
-          <h1>Chambres</h1>
-          <nav>
-            <ul>
-              <li><a class="active" href="">Simple</a></li>
-              <li><a href="">Double</a></li>
-              <li><a href="">Triple</a></li>
-              <li><a href="">Familiale</a></li>
-            </ul>
-          </nav>
+          <h1>Juan-Les-Pins</h1>
       </section>
 
       <section class="wrap">
-        <section class="roomsContent">
-            <div><img src="images/slider.png"></div>
+        <section class="destinationContentOne">
             <div>
-              <h2>Chambres Simple</h2>
-              <p>L’hôtel vous accueille pour un séjour de repos sur les plus belles plages de la Côte d’Azur dans une jolie chambre toute équipée.</p>
-              <div>
-                <h3>Dès 75€</h3>
-                <a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button orange">Réserver</a>
-              </div>
-              <ul>
-                <li>Accés wifi gratuit</li>
-                <li>Téléphone</li>
-                <li>TV HD</li>
-                <li>Climatisation</li>
-                <li>Douche balnéo</li>
-                <li>Coffre Fort</li>
-                <li>+ 9€/personne pour le petit déjeuner</li>
-                <li>Lit de bébé gratuit "sur demande"</li>
-              </ul>
+              <h2>L'Hôtel Colbert</h2>
+              <p>L’Hôtel Colbert, hôtel 3 étoiles à Juan-Les-Pins est situé au centre de Juan-Les-Pins, idéalement placé à 50 mètres des plages. Nous vous accueillons dans une ambiance chaleureuse dans notre petit hôtel de 32 chambres rénové récemment, très agréable pour visiter la ville d’Antibes le vieux port à pied et découvrir les charmes de la station balnéaire très réputée de la Côte d’Azur. Les amoureux de la plage serons comblés. Venez profiter en famille été comme hiver de notre magnifique région avec la mer au pied des montagnes .</p>
             </div>
+            <div><img src="images/slider2.png"></div>
+        </section>
+      </section>
+
+      <div id="map"></div>
+      <script>
+        function initMap() {
+          var uluru = {lat: 43.5712913, lng: 7.1074263};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCK-yhGEWRguLrYwvwOL5bZ0e71HkKeF4o&callback=initMap">
+      </script>
+
+      <section class="wrap">
+        <section class="destinationContentTwo">
+            <h2>Transports</h2>
+            <section>
+                <div>
+                  <p>🚗 EN VOITURE</p>
+                  <p>Sortie de l'Autoroute A8 Antibes > Suivre la direction Juan-Les-Pins > Prendre Avenue Amiral Courbet > Premiére a droite Rue Bricka En centre Ville de Juan<br>Parking a proximite:<br>-Parking Courbet<br>-Stationnement dans la Rue Bricka Gratuit<br>-Emplacement de parking privé limité sous réservation, 10€/j</p>
+                </div>
+                <div>
+                  <p>🚆 EN TRAIN</p>
+                  <p>De la Gare SNCF de Juan les Pins 5 minutes à pied.</p>
+                </div>
+                <div>
+                  <p>✈️ EN AVION</p>
+                  <p>De l'Aéroport de Nice - Côte d'azur, Bus express 250 "Station Régence"</p>
+                </div>
+            </section>
         </section>
       </section>
 

@@ -25,6 +25,11 @@
   border-color: $transparentBorder;
 }
 
+@mixin paragraph {
+  font-size: $bigText;
+  line-height: 32px;
+}
+
 @mixin zero {
   margin: 0;
   padding: 0;
