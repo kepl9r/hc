@@ -58,8 +58,7 @@ header {
   margin-top: 16px;
 }
 
-
-.subWrap{
+.subWrap {
   position: relative;
   max-width: 1440px;
   min-height: calc(100vh);
@@ -84,7 +83,7 @@ header {
     display: block;
     float: right;
     clear: both;
-    ul{
+    ul {
       padding-top: 18px;
       li {
         display: block;
@@ -190,6 +189,9 @@ header {
 
 /* ----------- Navbar specific media End ----------- */
 
+
+/* ----------- Hero Units Start ----------- */
+
 .hero {
   background-image: url("../images/hero.png");
   @include bgFull;
@@ -230,6 +232,34 @@ header {
   }
 }
 
+.roomsHero {
+  background-image: url("../images/rooms.png");
+  @include bgFull;
+  div {
+    position: relative;
+    padding: 95px 0 60px 0;
+    width: 80%;
+    @include auto;
+    @media #{$mobile} {
+      padding: 30px 0;
+    }
+    h1 {
+      color: $lightTitle;
+      font-size: $title;
+      font-weight: normal;
+    }
+    nav {
+      float: none;
+    }
+  }
+}
+
+
+/* ----------- Hero Units End ----------- */
+
+
+/* ----------- Content Start  ----------- */
+
 .dates {
   position: relative;
   text-align: center;
@@ -240,9 +270,6 @@ header {
     width: 20%;
   }
 }
-
-
-/* ----------- dates specific media  ----------- */
 
 @media #{$mobile} {
   .dates input {
@@ -259,19 +286,22 @@ header {
   }
 }
 
-
-/* ----------- dates specific media end ----------- */
-
 .box {
   ul {
     display: flex;
     @include zero;
+    @media #{$mobile} {
+      flex-direction: column;
+    }
     li {
       text-align: center;
       padding: 7rem 0 8.5rem 0;
       width: 33.3333333333%;
       @include all;
       @include bgFull;
+      @media #{$mobile} {
+        width: 100%;
+      }
       &:nth-child(1) {
         background-image: url("../images/boxOne.png");
       }
@@ -298,26 +328,75 @@ header {
   }
 }
 
-
-/* ----------- box specific media  ----------- */
-
-@media #{$mobile} {
-  .box ul {
-    flex-direction: column;
-    li {
+.roomsContent {
+  display: flex;
+  padding: 32px 0;
+    @media #{$mobile}{
+      flex-direction: column;
+    }
+  div {
+    width: 50%;
+    @media #{$mobile}{
       width: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    &:first-child {
+      padding: 0 16px 0 0;
+      @media #{$mobile}{
+        padding: 0;
+      }
+    }
+    &:last-child {
+      padding: 0 0 0 16px;
+      @media #{$mobile}{
+        padding: 32px 0 0 0;
+      }
+      h2 {
+        font-size: $subTitle;
+        color: $darkTitle;
+        font-weight: normal;
+      }
+      p {
+        font-size: $text;
+        color: $darkParagraph;
+        margin-top: 16px;
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 16px 0;
+        padding: 16px 0;
+        border-top: 1px solid $lightBorder;
+        border-bottom: 1px solid $lightBorder;
+        h3 {
+          font-size: $mediumText;
+          color: $darkParagraph;
+          font-weight: normal;
+        }
+      }
+      ul li {
+        color: $darkParagraph;
+        margin: 0 0 16px 0;
+      }
     }
   }
 }
 
 
-/* ----------- box specific media end ----------- */
+/* ----------- Content End  ----------- */
+
+/* ----------- Footer Start  ----------- */
 
 footer {
   ul {
     display: flex;
-    padding:16px 0;
-    border-bottom: 1px solid $darkBorder;
+    padding: 16px 0;
+    border-top: 1px solid $lightBorder;
+    border-bottom: 1px solid $lightBorder;
     li {
       width: 33.33333333%;
       p {
@@ -326,7 +405,7 @@ footer {
       }
       &:nth-child(1) {
         text-align: left;
-        p{
+        p {
           margin-top: 5px;
         }
       }
@@ -354,16 +433,14 @@ footer {
     padding: 8px 0 0 0;
     section {
       &:first-child {
-        zoom:.9;
+        zoom: .9;
       }
       &:last-child {
-        zoom:.9;
+        zoom: .9;
       }
     }
   }
 }
-
-/* ----------- footer specific media  ----------- */
 
 @media #{$mobile} {
   footer {
@@ -394,4 +471,5 @@ footer {
   }
 }
 
-/* ----------- footer specific media end  ----------- */
+
+/* ----------- Footer End ----------- */

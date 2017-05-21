@@ -4,8 +4,8 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Hôtel Colbert Juan Les Pins - Accueil</title>
-    <meta name="description" content="L'Hôtel Colbert est situé au centre de Juan-les-pins, idéalement placé à 50 métres des plages, à 5 min du centre ville.">
+    <title>Hôtel Colbert Juan Les Pins - Les Chambres</title>
+    <meta name="description" content="L'Hôtel Colbert disposent de 32 Chambres rénovées récemment.">
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="javascripts/scripts.js"></script>
   </head>
@@ -18,8 +18,8 @@
           <input id="toggle" class="menuIcon" type="checkbox" checked/>
           <nav>
             <ul>
-              <li><a class="active" href="index.html">L'Hôtel</a></li>
-              <li><a href="">Chambres</a></li>
+              <li><a href="index.html">L'Hôtel</a></li>
+              <li><a class="active"href="">Chambres</a></li>
               <li><a href="">Destination</a></li>
               <li><a href="">Contact</a></li>
               <li><a href="">Infos</a></li>
@@ -32,39 +32,44 @@
           <section>
       </header>
 
-      <section class="hero">
+      <section class="roomsHero">
         <div>
-          <h1>Bienvenue a l’Hôtel Colbert*** Juan-les-pins</h1>
-          <p>L'Hôtel Colbert, hôtel 3 étoiles est situé au centre de Juan-Les-Pins, idéalement
-            <br>placé à 50 métres des plages, à 5 min du centre ville.</p>
-        </div>
+          <h1>Chambres</h1>
+          <nav>
+            <ul>
+              <li><a class="active" href="">Simple</a></li>
+              <li><a href="">Double</a></li>
+              <li><a href="">Triple</a></li>
+              <li><a href="">Familiale</a></li>
+            </ul>
+          </nav>
       </section>
 
-      <section class="dates">
-        <input type="Date" name="Dates"></input>
-        <input type="number" name="Clients" min="1" max="10" value="Clients" placeholder="Clients"></input>
-        <span><a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button orange">Réserver</a></span>
+      <section class="wrap">
+        <section class="roomsContent">
+            <div><img src="images/slider.png"></div>
+            <div>
+              <h2>Chambres Simple</h2>
+              <p>L’hôtel vous accueille pour un séjour de repos sur les plus belles plages de la Côte d’Azur dans une jolie chambre toute équipée.</p>
+              <div>
+                <h3>Dès 75€</h3>
+                <a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button orange">Réserver</a>
+              </div>
+              <ul>
+                <li>Accés wifi gratuit</li>
+                <li>Téléphone</li>
+                <li>TV HD</li>
+                <li>Climatisation</li>
+                <li>Douche balnéo</li>
+                <li>Coffre Fort</li>
+                <li>+ 9€/personne pour le petit déjeuner</li>
+                <li>Lit de bébé gratuit "sur demande"</li>
+              </ul>
+            </div>
+        </section>
       </section>
 
-      <section class="box">
-        <ul>
-          <li>
-            <h2>Chambres</h2>
-            <p>Au bord des plus belles plages de la Côte d’Azur, nous disposons de 4 types de chambres: chambre simple, double, triple ou quadruple.</p>
-            <a href="" class="button white">Voir les Chambres</a>
-          </li>
-          <li>
-            <h2>Destination</h2>
-            <p>Station balnéaire où se mêlent traditions et plaisirs nautiques, histoire et patrimoine, festivals et vie nocturne.</p>
-            <a href="" class="button white">Découvrir</a>
-          </li>
-          <li>
-            <h2>Offres</h2>
-            <p>Profitez de nos offre “Petit Dejeuner Offert!” sure un sejour minimum 2 nuits. (offre non cumulable avec autre promo et vérifier la disponibilité)</p>
-            <a href="" class="button white">J’en Profite</a>
-          </li>
-        </ul>
-      </section>
+
       <footer class="wrap">
         <ul>
           <li>
