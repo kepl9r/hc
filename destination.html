@@ -14,7 +14,7 @@
     <section class="subWrap">
       <header>
         <section class="wrap">
-          <a href=""><img src="images/icLogo.svg"></a>
+          <a href="index.html"><img src="images/icLogo.svg"></a>
           <input id="toggle" class="menuIcon" type="checkbox" checked/>
           <nav>
             <ul>
@@ -53,7 +53,10 @@
           var uluru = {lat: 43.5712913, lng: 7.1074263};
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 16,
-            center: uluru
+            center: uluru,
+            mapTypeControl: false,
+            streetViewControl: false,
+            scrollwheel: false
           });
           var marker = new google.maps.Marker({
             position: uluru,

@@ -7,22 +7,47 @@
     <title>Hôtel Colbert Juan Les Pins - Accueil</title>
     <meta name="description" content="L'Hôtel Colbert est situé au centre de Juan-les-pins, idéalement placé à 50 métres des plages, à 5 min du centre ville.">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="javascripts/scripts.js"></script>
   </head>
 
   <body>
+
+    <div id="bgModalContact"></div>
+    <div id="modalContact">
+      <h2>Contact</h2>
+      <form action="" method="post">
+        <input type="name" name="name" placeholder="Nom et Prénom">
+        <input type="email" name="email" placeholder="E-mail">
+        <textarea placeholder="Votre Message"></textarea>
+        <input type="submit" value="Envoyer">
+      </form>
+    </div>
+
+    <div id="bgModalInfos"></div>
+    <div id="modalInfos">
+      <h2>Infos</h2>
+      <ul>
+        <li><p>📍 12 Rue Bricka, Antibes/Juan Les Pins, France<p></li>
+        <li><p>📞 + 33 4 93 61 20 08</p></li>
+        <li><p>📠 0493673398</p></li>
+        <li><p>✉️ <a class="orange" href="mailto:contact@hotelcolbertajuan.fr?Subject=Hello" target="_top">contact@hotelcolbertajuan.fr</a></p></li>
+        <li><p>♿ Prière de nous excuser, notre hôtel est actuellement inaccessible aux personnes handicapées.</p></li>
+      </ul>
+    </div>
+
     <section class="subWrap">
       <header>
         <section class="wrap">
-          <a href=""><img src="images/icLogo.svg"></a>
+          <a href="index.html"><img src="images/icLogo.svg"></a>
           <input id="toggle" class="menuIcon" type="checkbox" checked/>
           <nav>
             <ul>
               <li><a class="active" href="index.html">L'Hôtel</a></li>
               <li><a href="rooms.html">Chambres</a></li>
               <li><a href="destination.html">Destination</a></li>
-              <li><a href="">Contact</a></li>
-              <li><a href="">Infos</a></li>
+              <li><a id="openModalContact">Contact</a></li>
+              <li><a id="openModalInfos">Infos</a></li>
               <li><a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button white">Réserver</a></li>
               <li>
                 <div><img src="images/us.svg"></div>
@@ -51,17 +76,17 @@
           <li>
             <h2>Chambres</h2>
             <p>Au bord des plus belles plages de la Côte d’Azur, nous disposons de 4 types de chambres: chambre simple, double, triple ou quadruple.</p>
-            <a href="" class="button white">Voir les Chambres</a>
+            <a href="rooms.html" class="button white">Voir les Chambres</a>
           </li>
           <li>
             <h2>Destination</h2>
             <p>Station balnéaire où se mêlent traditions et plaisirs nautiques, histoire et patrimoine, festivals et vie nocturne.</p>
-            <a href="" class="button white">Découvrir</a>
+            <a href="destination.html" class="button white">Découvrir</a>
           </li>
           <li>
             <h2>Offres</h2>
             <p>Profitez de nos offre “Petit Dejeuner Offert!” sure un sejour minimum 2 nuits. (offre non cumulable avec autre promo et vérifier la disponibilité)</p>
-            <a href="" class="button white">J’en Profite</a>
+            <a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button white">J’en Profite</a>
           </li>
         </ul>
       </section>

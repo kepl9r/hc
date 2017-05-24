@@ -15,14 +15,27 @@
   }
 }
 
+@mixin input {
+  width: 100%;
+  border: 1px solid $darkBorder;
+  padding: 8px;
+  font-size: $text;
+  max-height: 34px;
+  background: none;
+  box-shadow: none;
+  @include border-radius($radius);
+}
+
 @mixin buttonOrange {
   color: $orange;
   border-color: $lightOrange;
+  cursor: pointer;
 }
 
 @mixin buttonWhite {
   color: $lightTitle;
   border-color: $transparentBorder;
+  cursor: pointer;
 }
 
 @mixin paragraph {

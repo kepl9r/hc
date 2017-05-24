@@ -31,7 +31,7 @@ a.button {
   padding: 8px;
   font-size: $text;
   border: 1px solid;
-  @include border-radius(4px);
+  @include border-radius($radius);
 }
 
 a.button.orange {
@@ -43,19 +43,15 @@ a.button.white {
 }
 
 input {
-  padding: 8px;
-  font-size: $text;
-  background: none;
-  @include border-radius(4px);
-  max-height: 34px;
+  @include input;
 }
 
 header {
   position: relative;
-  z-index: 6000;
+  z-index: 1000;
   width: 100%;
   margin-bottom: -70px;
-  margin-top: 16px;
+  padding-top: 16px;
 }
 
 .subWrap {
@@ -90,6 +86,7 @@ header {
         float: left;
         padding: 0 0 8px 32px;
         border-bottom: 1px solid $transparentBorder;
+        cursor: pointer;
         &:nth-child(1) {
           padding-left: 0px;
         }
@@ -284,7 +281,7 @@ header {
   text-align: center;
   @include auto;
   input {
-    border: 1px solid $darkBorder;
+    @include input;
     margin: 16px 12px 16px 0;
     width: 20%;
   }
@@ -493,6 +490,99 @@ header {
     }
   }
 }
+
+/* Start Modal Video
+================================================== */
+
+#bgModalContact,
+#modalContact,
+#bgModalInfos,
+#modalInfos {
+  display: none;
+  position: fixed;
+}
+
+#bgModalContact,
+#bgModalInfos {
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 30, 60, 0.5);
+  z-index: 2000;
+}
+
+#modalContact {
+  z-index: 3000;
+  background: white;
+  padding: 32px;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -17.5%);
+  width: 100%;
+  max-width: 512px;
+  @include border-radius($radius);
+  h2 {
+    font-size: $subTitle;
+    color: $darkTitle;
+    font-weight: normal;
+    margin-bottom: 16px;
+  }
+  form {
+    @include border-radius($radius);
+    input {
+      @include input;
+      margin-bottom: 16px;
+      &:nth-child(4){
+        @include buttonOrange;
+        width: auto;
+        margin-bottom: 0;
+      }
+    }
+    textarea {
+      @include input;
+      padding-bottom: 3rem;
+      margin-bottom: 16px;
+      max-height: none;
+    }
+  }
+}
+
+#modalInfos {
+  z-index: 3000;
+  background: white;
+  padding: 32px;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -17.5%);
+  width: 100%;
+  max-width: 512px;
+  @include border-radius($radius);
+  h2 {
+    font-size: $subTitle;
+    color: $darkTitle;
+    font-weight: normal;
+    margin-bottom: 16px;
+  }
+  ul {
+    @include zero;
+    li {
+      margin: 0 0 20px 0;
+      &:last-child{
+        margin: 0;
+      }
+      p {
+        @include paragraph;
+        color: $darkParagraph;
+        a {
+          color: $darkParagraph;
+        }
+      }
+    }
+  }
+}
+
+
+/* End Modal Video
+================================================== */
 
 
 /* ----------- Content End  ----------- */
