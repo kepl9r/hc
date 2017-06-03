@@ -4,10 +4,14 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Hôtel Colbert Juan Les Pins - Les Chambres</title>
     <meta name="description" content="L'Hôtel Colbert disposent de 32 Chambres rénovées récemment.">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/swiper.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="javascripts/scripts.js"></script>
+    <script src="javascripts/swiper.jquery.min.js"></script>
   </head>
 
   <body>
@@ -47,8 +51,19 @@
 
       <section class="wrap">
         <section class="roomsContent">
-            <div><img src="images/slider.png"></div>
-            <div>
+          <!-- Slider main container -->
+            <div class="swiper-container" >
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide"><img  src="images/slider.png"></div>
+                  <div class="swiper-slide"><img src="images/slider.png"></div>
+                  <div class="swiper-slide"><img src="images/slider.png"></div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination swiper-pagination-white"></div>
+            </div>
+            <div class="roomDetail">
               <h2>Chambres Simple</h2>
               <p>L’hôtel vous accueille pour un séjour de repos sur les plus belles plages de la Côte d’Azur dans une jolie chambre toute équipée.</p>
               <div>

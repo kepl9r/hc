@@ -4,10 +4,14 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Hôtel Colbert Juan Les Pins - JUAN LES PINS</title>
     <meta name="description" content="Hôtel 3 étoiles à Juan idéalement placé proche du bord de mer.">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/swiper.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="javascripts/scripts.js"></script>
+    <script src="javascripts/swiper.jquery.min.js"></script>
   </head>
 
   <body>
@@ -39,11 +43,22 @@
 
       <section class="wrap">
         <section class="destinationContentOne">
-            <div>
+            <div class="destinationDesc">
               <h2>L'Hôtel Colbert</h2>
               <p>L’Hôtel Colbert, hôtel 3 étoiles à Juan-Les-Pins est situé au centre de Juan-Les-Pins, idéalement placé à 50 mètres des plages. Nous vous accueillons dans une ambiance chaleureuse dans notre petit hôtel de 32 chambres rénové récemment, très agréable pour visiter la ville d’Antibes le vieux port à pied et découvrir les charmes de la station balnéaire très réputée de la Côte d’Azur. Les amoureux de la plage serons comblés. Venez profiter en famille été comme hiver de notre magnifique région avec la mer au pied des montagnes .</p>
             </div>
-            <div><img src="images/slider2.png"></div>
+            <!-- Slider main container -->
+              <div class="swiper-container" >
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img  src="images/slider2.png"></div>
+                    <div class="swiper-slide"><img src="images/slider2.png"></div>
+                    <div class="swiper-slide"><img src="images/slider2.png"></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination swiper-pagination-white"></div>
+              </div>
         </section>
       </section>
 

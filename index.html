@@ -4,6 +4,7 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <title>Hôtel Colbert Juan Les Pins - Accueil</title>
     <meta name="description" content="L'Hôtel Colbert est situé au centre de Juan-les-pins, idéalement placé à 50 métres des plages, à 5 min du centre ville.">
     <link rel="stylesheet" href="stylesheets/style.css">
@@ -29,7 +30,7 @@
       <h2>Infos</h2>
       <ul>
         <li><p>📍 12 Rue Bricka, Antibes/Juan Les Pins, France<p></li>
-        <li><p>📞 + 33 4 93 61 20 08</p></li>
+        <li><p>📞 <a href="tel:+33493612008">+ 33 4 93 61 20 08 </a></p></li>
         <li><p>📠 0493673398</p></li>
         <li><p>✉️ <a class="orange" href="mailto:contact@hotelcolbertajuan.fr?Subject=Hello" target="_top">contact@hotelcolbertajuan.fr</a></p></li>
         <li><p>♿ Prière de nous excuser, notre hôtel est actuellement inaccessible aux personnes handicapées.</p></li>
@@ -50,7 +51,11 @@
               <li><a id="openModalInfos">Infos</a></li>
               <li><a href="https://crs.hotelnet.biz/crs.web2/wbe/Selection.aspx?hotel=3214&channel=0000&language=FR" class="button white">Réserver</a></li>
               <li>
-                <div><img src="images/us.svg"></div>
+                <select>
+                  <option value="fr" selected="selected">EN</option>
+                  <option value="en">FR</option>
+                  <option value="it">IT</option>
+                </select>
               </li>
             </ul>
           </nav>

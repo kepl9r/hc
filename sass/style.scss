@@ -106,6 +106,23 @@ header {
           padding-bottom: 8px;
           border-bottom: 1px solid $lightTitle;
         }
+        select{
+          background-color: transparent;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          border: none;
+          @include zero;
+          option[value="en"] {
+            background-image:url(../images/us.svg);
+          }
+          option[value="fr"] {
+            background-image:url(../images/us.svg);
+          }
+          option[value="it"] {
+            background-image:url(../images/us.svg);
+          }
+        }
       }
     }
   }
@@ -169,6 +186,7 @@ header {
         margin: 0;
         padding: 1.2em 0;
         border-top: 1px solid $transparentBorder;
+        cursor: pointer;
         &:last-child {
           border-bottom: none;
         }
@@ -198,6 +216,9 @@ header {
     text-align: center;
     width: 80%;
     @include auto;
+    @media #{$mobile} {
+      padding: 100px 0;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -354,17 +375,19 @@ header {
     @media #{$mobile} {
       width: 100%;
     }
-    img {
-      width: 100%;
-      height: auto;
-    }
-    &:first-child {
-      padding: 0 16px 0 0;
-      @media #{$mobile} {
-        padding: 0;
+    &.swiper-container {
+      margin: 0 16px 0 0;
+      height: 50%;
+      div {
+        div {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
       }
     }
-    &:last-child {
+    &.roomDetail{
       padding: 0 0 0 16px;
       @media #{$mobile} {
         padding: 32px 0 0 0;
@@ -416,7 +439,7 @@ header {
       width: 100%;
       height: auto;
     }
-    &:first-child {
+    &.destinationDesc {
       padding: 0 16px 0 0;
       @media #{$mobile} {
         padding: 0;
@@ -432,10 +455,19 @@ header {
         margin-top: 16px;
       }
     }
-    &:last-child {
-      padding: 0 0 0 16px;
+    &.swiper-container {
+      margin: 0 0 0 16px;
+      height: 50%;
       @media #{$mobile} {
-        padding: 32px 0 0 0;
+        margin: 32px 0 0 0;
+      }
+      div{
+        div{
+          img{
+            width: 100%;
+            height: auto;
+          }
+        }
       }
     }
   }
@@ -520,6 +552,9 @@ header {
   width: 100%;
   max-width: 512px;
   @include border-radius($radius);
+  @media #{$mobile} {
+    width: 90%;
+  }
   h2 {
     font-size: $subTitle;
     color: $darkTitle;
@@ -556,6 +591,9 @@ header {
   width: 100%;
   max-width: 512px;
   @include border-radius($radius);
+  @media #{$mobile} {
+    width: 90%;
+  }
   h2 {
     font-size: $subTitle;
     color: $darkTitle;
