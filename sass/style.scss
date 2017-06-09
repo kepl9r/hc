@@ -297,7 +297,7 @@ header {
 
 /* ----------- Content Start  ----------- */
 
-.dates {
+.resBox {
   position: relative;
   text-align: center;
   @include auto;
@@ -305,21 +305,25 @@ header {
     @include input;
     margin: 16px 12px 16px 0;
     width: 20%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 }
 
 @media #{$mobile} {
-  .dates input {
-    display: inline-block;
-    width: 80%;
-    margin: 16px 16px 0 16px;
-    &:nth-child(2) {
-      margin-bottom: 24px;
+  .resBox {
+    span {
+      display: block;
+      padding-bottom: 24px;
     }
-  }
-  span {
-    display: block;
-    padding-bottom: 24px;
+    input{
+      display: inline-block;
+      width: 80%;
+      margin: 16px 16px 0 16px;
+      &:nth-child(2) {
+        margin-bottom: 24px;
+      }
+    }
   }
 }
 
