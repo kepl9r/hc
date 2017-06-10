@@ -90,7 +90,9 @@ header {
         &:nth-child(1) {
           padding-left: 0px;
         }
-        &:nth-child(6),
+        &:nth-child(6) {
+          border-bottom: none;
+        }
         &:nth-child(7) {
           border-bottom: none;
         }
@@ -106,7 +108,7 @@ header {
           padding-bottom: 8px;
           border-bottom: 1px solid $lightTitle;
         }
-        select{
+        select {
           background-color: transparent;
           -webkit-appearance: none;
           -moz-appearance: none;
@@ -114,13 +116,13 @@ header {
           border: none;
           @include zero;
           option[value="en"] {
-            background-image:url(../images/us.svg);
+            background-image: url(../images/us.svg);
           }
           option[value="fr"] {
-            background-image:url(../images/us.svg);
+            background-image: url(../images/us.svg);
           }
           option[value="it"] {
-            background-image:url(../images/us.svg);
+            background-image: url(../images/us.svg);
           }
         }
       }
@@ -314,7 +316,7 @@ header {
       display: block;
       padding-bottom: 24px;
     }
-    input{
+    input {
       display: inline-block;
       width: 80%;
       margin: 16px 16px 0 16px;
@@ -366,9 +368,6 @@ header {
   }
 }
 
-
-
-
 .roomsContent {
   display: flex;
   padding: 32px 0;
@@ -385,25 +384,25 @@ header {
       width: 50%;
       overflow: hidden;
       margin: 0 16px 0 0;
-      @media #{$mobile}{
+      @media #{$mobile} {
         width: 100%;
         margin: 0;
       }
-      figure{
+      figure {
         width: 400%;
         position: relative;
-        margin:0;
+        margin: 0;
         padding: 0;
         animation: 10s slide infinite;
         -webkit-animation: 10s slide infinite;
         img {
           width: 25%;
-           float: left;
-           height: auto;
+          float: left;
+          height: auto;
         }
       }
     }
-    &.roomDetail{
+    &.roomDetail {
       padding: 0 0 0 16px;
       @media #{$mobile} {
         padding: 32px 0 0 0;
@@ -439,7 +438,6 @@ header {
     }
   }
 }
-
 
 .destinationContentOne {
   display: flex;
@@ -477,21 +475,21 @@ header {
       width: 50%;
       overflow: hidden;
       margin: 0 0 0 16px;
-      @media #{$mobile}{
+      @media #{$mobile} {
         width: 100%;
         margin: 32px 0 0 0;
       }
-      figure{
+      figure {
         width: 400%;
         position: relative;
-        margin:0;
+        margin: 0;
         padding: 0;
         animation: 10s slide infinite;
         -webkit-animation: 10s slide infinite;
         img {
           width: 25%;
-           float: left;
-           height: auto;
+          float: left;
+          height: auto;
         }
       }
     }
@@ -506,7 +504,7 @@ header {
 
 .destinationContentTwo {
   padding: 32px 0;
-  h2{
+  h2 {
     font-size: $subTitle;
     color: $darkTitle;
     font-weight: normal;
@@ -523,19 +521,19 @@ header {
         color: $darkParagraph;
         margin-top: 16px;
       }
-      &:nth-child(1){
+      &:nth-child(1) {
         margin-right: 16px;
         @media #{$mobile} {
-          margin:0;
+          margin: 0;
         }
       }
-      &:nth-child(2){
-        margin:0 16px;
+      &:nth-child(2) {
+        margin: 0 16px;
         @media #{$mobile} {
           margin: 16px 0 0 0;
         }
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         margin-left: 16px;
         @media #{$mobile} {
           margin: 16px 0 0 0;
@@ -548,21 +546,34 @@ header {
   }
 }
 
+
 /* Slider Keyframes
 ================================================== */
 
 @-webkit-keyframes slide {
-	0% { left:0%; }
-	16% { left:0%; }
-	33% { left:-100%; }
-	49% { left:-100%; }
-	66% { left:-200%; }
-	82% { left:-200%; }
+  0% {
+    left: 0%;
+  }
+  16% {
+    left: 0%;
+  }
+  33% {
+    left: -100%;
+  }
+  49% {
+    left: -100%;
+  }
+  66% {
+    left: -200%;
+  }
+  82% {
+    left: -200%;
+  }
 }
+
 
 /* End Slider Keyframes
 ================================================== */
-
 
 
 /* Start Modal Video
@@ -608,7 +619,7 @@ header {
     input {
       @include input;
       margin-bottom: 16px;
-      &:nth-child(4){
+      &:nth-child(4) {
         @include buttonOrange;
         width: auto;
         margin-bottom: 0;
@@ -646,7 +657,7 @@ header {
     @include zero;
     li {
       margin: 0 0 20px 0;
-      &:last-child{
+      &:last-child {
         margin: 0;
       }
       p {
