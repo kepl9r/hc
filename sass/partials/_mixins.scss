@@ -23,6 +23,8 @@
   max-height: 34px;
   background: none;
   box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   @include border-radius($radius);
 }
 
