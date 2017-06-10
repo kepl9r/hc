@@ -671,6 +671,24 @@ header {
   }
 }
 
+#lang{
+  position: absolute;
+  right: 0;
+  top:100px;
+  z-index: 1500;
+  ul {
+    background: white;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    padding: 8px;
+    font-size: $bigText;
+    li:hover {
+      @include all;
+      transform: scale(1.15);
+    }
+  }
+}
+
 
 /* End Modal Video
 ================================================== */
